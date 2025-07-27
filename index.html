@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLICEIX LIVE - Episode Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="header-title">SLICEIX LIVE</h1>
+                <p class="header-subtitle">The Ultimate Web3 Music Livestream 🚀</p>
+                <p class="header-description">Episode Planning & Management Dashboard</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Tab Navigation -->
+            <nav class="tab-nav">
+                <button class="tab-btn active" data-tab="planner">Episode Planner</button>
+                <button class="tab-btn" data-tab="history">Episode History</button>
+                <button class="tab-btn" data-tab="spreadsheet">Spreadsheet View</button>
+            </nav>
+
+            <!-- Episode Planner Tab -->
+            <div id="planner-tab" class="tab-content active">
+                <div class="episode-form-container">
+                    <form id="episode-form" class="episode-form">
+                        <!-- Basic Episode Info -->
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Episode Information</h3>
+                                <div class="form-group">
+                                    <label class="form-label" for="episode-date">Episode Date</label>
+                                    <input type="date" id="episode-date" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="episode-title">Episode Title</label>
+                                    <input type="text" id="episode-title" class="form-control" placeholder="SLICEIX LIVE - Episode [Date]" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="host-notes">Host Notes</label>
+                                    <textarea id="host-notes" class="form-control" rows="3" placeholder="General notes for this episode..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- News Stories Section -->
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Web3 Music News Stories</h3>
+                                <div class="news-stories">
+                                    <!-- News Story 1 -->
+                                    <div class="news-story">
+                                        <h4>News Story 1 <span class="timestamp-label">(15:00)</span></h4>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news1-title">Story Title</label>
+                                            <input type="text" id="news1-title" class="form-control" placeholder="Enter news story title...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news1-link">Story Link</label>
+                                            <input type="url" id="news1-link" class="form-control" placeholder="https://example.com/news-article">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news1-timestamp">Timestamp</label>
+                                            <input type="text" id="news1-timestamp" class="form-control" value="15:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news1-summary">Summary</label>
+                                            <textarea id="news1-summary" class="form-control" rows="2" placeholder="Brief summary of the news story..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- News Story 2 -->
+                                    <div class="news-story">
+                                        <h4>News Story 2 <span class="timestamp-label">(25:00)</span></h4>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news2-title">Story Title</label>
+                                            <input type="text" id="news2-title" class="form-control" placeholder="Enter news story title...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news2-link">Story Link</label>
+                                            <input type="url" id="news2-link" class="form-control" placeholder="https://example.com/news-article">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news2-timestamp">Timestamp</label>
+                                            <input type="text" id="news2-timestamp" class="form-control" value="25:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news2-summary">Summary</label>
+                                            <textarea id="news2-summary" class="form-control" rows="2" placeholder="Brief summary of the news story..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <!-- News Story 3 -->
+                                    <div class="news-story">
+                                        <h4>News Story 3 <span class="timestamp-label">(35:00)</span></h4>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news3-title">Story Title</label>
+                                            <input type="text" id="news3-title" class="form-control" placeholder="Enter news story title...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news3-link">Story Link</label>
+                                            <input type="url" id="news3-link" class="form-control" placeholder="https://example.com/news-article">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news3-timestamp">Timestamp</label>
+                                            <input type="text" id="news3-timestamp" class="form-control" value="35:00">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="news3-summary">Summary</label>
+                                            <textarea id="news3-summary" class="form-control" rows="2" placeholder="Brief summary of the news story..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tech Talk Section -->
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Tech Talk & Tools <span class="timestamp-label">(40:00)</span></h3>
+                                <div class="form-group">
+                                    <label class="form-label" for="tech-talk-topic">Tech Talk Topic</label>
+                                    <input type="text" id="tech-talk-topic" class="form-control" placeholder="e.g., Sound.xyz platform review and live demo">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="tech-talk-timestamp">Timestamp</label>
+                                    <input type="text" id="tech-talk-timestamp" class="form-control" value="40:00">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="tech-talk-description">Description</label>
+                                    <textarea id="tech-talk-description" class="form-control" rows="3" placeholder="Detailed description of the tech talk segment..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Creator Tutorial Section -->
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Creator Bootcamp Tutorial <span class="timestamp-label">(50:00)</span></h3>
+                                <div class="form-group">
+                                    <label class="form-label" for="tutorial-topic">Tutorial Topic</label>
+                                    <input type="text" id="tutorial-topic" class="form-control" placeholder="e.g., How to Mint Your First Music NFT">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="tutorial-timestamp">Timestamp</label>
+                                    <input type="text" id="tutorial-timestamp" class="form-control" value="50:00">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="tutorial-description">Description</label>
+                                    <textarea id="tutorial-description" class="form-control" rows="3" placeholder="Step-by-step tutorial description..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Community Section -->
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Community Collab (Q&A) <span class="timestamp-label">(1:05:00)</span></h3>
+                                <div class="form-group">
+                                    <label class="form-label" for="community-timestamp">Timestamp</label>
+                                    <input type="text" id="community-timestamp" class="form-control" value="1:05:00">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="community-notes">Q&A Notes</label>
+                                    <textarea id="community-notes" class="form-control" rows="3" placeholder="Notes for community interaction, Q&A topics, feedback sessions..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn--primary">Save Episode</button>
+                            <button type="button" id="clear-form" class="btn btn--secondary">Clear Form</button>
+                            <button type="button" id="load-sample" class="btn btn--outline">Load Sample Data</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Episode History Tab -->
+            <div id="history-tab" class="tab-content">
+                <div class="history-container">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3>Episode History</h3>
+                        <button id="refresh-history" class="btn btn--outline btn--sm">Refresh</button>
+                    </div>
+                    <div id="history-list" class="history-list">
+                        <!-- Episodes will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spreadsheet View Tab -->
+            <div id="spreadsheet-tab" class="tab-content">
+                <div class="spreadsheet-container">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3>Spreadsheet View</h3>
+                        <div class="export-actions">
+                            <button id="export-pdf" class="btn btn--primary btn--sm">Export PDF</button>
+                            <button id="export-csv" class="btn btn--outline btn--sm">Export CSV</button>
+                            <button id="share-email" class="btn btn--secondary btn--sm">Share Email</button>
+                        </div>
+                    </div>
+                    <div class="spreadsheet-scroll">
+                        <table id="spreadsheet-table" class="spreadsheet-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Episode Title</th>
+                                    <th>News Story 1</th>
+                                    <th>News Story 2</th>
+                                    <th>News Story 3</th>
+                                    <th>Tech Talk Topic</th>
+                                    <th>Tutorial Topic</th>
+                                    <th>Q&A Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Data will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay hidden">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p>Processing...</p>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div id="success-message" class="success-message hidden">
+            <div class="success-content">
+                <span class="success-icon">✓</span>
+                <span class="success-text">Episode saved successfully!</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
